@@ -1,0 +1,275 @@
+/* ==========================================================================
+   1. CSS Reset & Variables
+   ========================================================================== */
+:root {
+    --primary-color: #6f4e37;    /* Coffee Brown */
+    --secondary-color: #e6ccb2;  /* Light Cream */
+    --dark-color: #2b1d14;       /* Deep Espresso */
+    --light-color: #f7f5f0;      /* Warm Off-White */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. Navigation Bar
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+
+.btn-nav {
+    text-decoration: none;
+    padding: 8px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 30px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-nav:hover {
+    background-color: var(--dark-color);
+}
+
+/* ==========================================================================
+   3. Hero Section
+   ========================================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    min-height: 80vh;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    padding-right: 50px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Modern Abstract Shape Mocking a Visual Asset */
+.coffee-blob {
+    width: 350px;
+    height: 400px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 200% 0% 200% 0%;
+    animation: morph 2s ease-in-out infinite alternate;
+    box-shadow: 0 20px 40px rgba(111, 78, 55, 0.2);
+}
+
+@keyframes morph {
+    0% { border-radius: 200% 0% 200% 0%; }
+    100% { border-radius: 0% 200% 0% 200%; }
+}
+
+.coffee-blob2 {
+    width: 350px;
+    height: 400px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 0% 200% 0% 200%;
+    animation: morph2 2s ease-in-out infinite alternate;
+    box-shadow: 0 20px 40px rgba(111, 78, 55, 0.2);
+    position: absolute;
+}
+
+@keyframes morph2 {
+    0% { border-radius: 0% 200% 0% 200%; }
+    100% { border-radius: 200% 0% 200% 0%; }
+}
+
+.coffee-blob3 {
+    margin-top: 100px;
+    width: 150px;
+    height: 200px;
+    background: linear-gradient(45deg, #6f4e37, #8d6f2e);
+    border-radius: 0% 200% 0% 200%;
+    animation: morph2 2s ease-in-out infinite alternate;
+    box-shadow: 0 20px 40px rgba(111, 78, 55, 0.2);
+    position: absolute;
+}
+
+/* ==========================================================================
+   4. Features Section
+   ========================================================================== */
+.features {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 60px 8%;
+    background-color: var(--white);
+}
+
+.feature-card {
+    flex: 1;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--light-color);
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.feature-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. Footer
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--dark-color);
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   6. Basic Responsiveness
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar { padding: 20px 5%; }
+    .nav-links { display: none; } /* Kept simple for raw HTML/CSS practice */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+    .hero-content { padding-right: 0; margin-bottom: 40px; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-buttons { justify-content: center; }
+    .coffee-blob { width: 300px; height: 300px; }
+    .features { flex-direction: column; padding: 40px 5%; }
+}
